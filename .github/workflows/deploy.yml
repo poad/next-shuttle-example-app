@@ -1,0 +1,54 @@
+name: Build and Deploy
+ 
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+
+  deploy:
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update Rust toolchain
+        run: rustup update
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8.6.2
+          run_install: |
+            - recursive: true
+              args: [--no-frozen-lockfile, --strict-peer-dependencies]
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3.7.0
+        with:
+          node-version: ${{ matrix.node-version }}
+          check-latest: true
+
+      - name: Build
+        run: pnpm build
+      
+      - name: Install cargo-binstall
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-binstall
+
+      - name: Prepare login to shuttle        
+        run: cargo binstall cargo-shuttle -y
+
+      - name: Login to shuttle
+        run: pnpm shuttle-login --api-key ${{ secrets.SHUTTLE_API_KEY }}
+      
+      - name: Deploy to shuttle
+        run: pnpm run deploy

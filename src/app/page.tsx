@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 import styles from './page.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -83,6 +83,21 @@ export default function Home() {
           </h2>
           <p className={inter.className}>
             Instantly deploy your Next.js site to a shareable URL with Vercel.
+          </p>
+        </a>
+      </div>
+      <div className={styles.grid}>
+        <a
+          href="https://github.com/poad/next-shuttle-example-app"
+          className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className={inter.className}>
+            Source <span>-&gt;</span>
+          </h2>
+          <p className={inter.className}>
+            Deployed Sources.
           </p>
         </a>
       </div>

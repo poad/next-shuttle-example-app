@@ -1,23 +1,28 @@
 {
-  "name": "next-shuttle-example-app",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@next/font": "13.4.9",
-    "@types/node": "20.4.1",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "eslint": "8.44.0",
-    "eslint-config-next": "13.4.9",
-    "next": "13.4.9",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.1.6"
-  }
+    "name": "next-shuttle-example-app",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "npm run build && concurrently --names \"next, shuttle\" --kill-others \"next dev\" \"cargo shuttle run --working-directory ./backend/\"",
+        "build": "next build && cargo build --manifest-path ./backend/Cargo.toml",
+        "start": "cargo shuttle project start --working-directory ./backend/",
+        "lint": "next lint",
+        "shuttle-login": "cargo shuttle login --working-directory ./backend/",
+        "deploy": "npm run build && cargo shuttle deploy --working-directory ./backend/ --allow-dirty",
+        "stop": "cargo shuttle project stop --working-directory ./backend/"
+    },
+    "dependencies": {
+        "@types/node": "20.4.1",
+        "@types/react": "18.2.14",
+        "@types/react-dom": "18.2.6",
+        "eslint": "8.44.0",
+        "eslint-config-next": "13.4.9",
+        "next": "13.4.9",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "typescript": "5.1.6"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.0"
+    }
 }
