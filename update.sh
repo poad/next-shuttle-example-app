@@ -21,7 +21,7 @@ if [ $result -ne 0 ]; then
 fi
 echo ""
 pwd
-pnpm install -r && pnpm up -r
+pnpm install -r && pnpm up -r && pnpm build
 result=$?
 if [ $result -ne 0 ]; then
   cd "${CUR}"
@@ -36,20 +36,7 @@ if [ $result -ne 0 ]; then
 fi
 echo ""
 pwd
-cargo update
-result=$?
-if [ $result -ne 0 ]; then
-  cd "${CUR}"
-  exit $result
-fi
-
-cd "${CURRENT}"
-result=$?
-if [ $result -ne 0 ]; then
-  cd "${CUR}"
-  exit $result
-fi
-pnpm build
+cargo update && cargo build
 result=$?
 if [ $result -ne 0 ]; then
   cd "${CUR}"
