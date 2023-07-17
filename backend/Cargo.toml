@@ -5,7 +5,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-axum = "^0.6.10"
+axum = "^0.6.19"
 axum-extra = { version = "^0.6.0", features = ["spa"] }
 shuttle-axum = "^0.21.0"
 shuttle-runtime = "^0.21.0"
