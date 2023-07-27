@@ -1,20 +1,7 @@
 name: dependabot-auto-merge
 
 on:
-  pull_request_target:
-
-permissions:
-  actions: write
-  checks: write
-  contents: write
-  deployments: write
-  id-token: write
-  issues: write
-  packages: none
-  pull-requests: write
-  repository-projects: write
-  security-events: write
-  statuses: write
+  pull_request:
 
 jobs:
   auto-merge:
@@ -29,4 +16,3 @@ jobs:
         with:
           github-token: ${{ secrets.PERSONAL_TOKEN_FOR_GITHUB_ACTIONS }}
           config: .github/dependabot-auto-merge.yml
-
