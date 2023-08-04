@@ -1,28 +1,34 @@
 {
-    "name": "next-shuttle-example-app",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "pnpm run build && concurrently --names \"next, shuttle\" --kill-others \"next dev\" \"cargo shuttle run --working-directory ./backend/\"",
-        "build": "next build && cargo build --manifest-path ./backend/Cargo.toml",
-        "start": "cargo shuttle project start --working-directory ./backend/",
-        "lint": "next lint",
-        "shuttle-login": "cargo shuttle login --working-directory ./backend/",
-        "deploy": "pnpm run build && cargo shuttle deploy --working-directory ./backend/ --allow-dirty",
-        "stop": "cargo shuttle project stop --working-directory ./backend/"
-    },
-    "dependencies": {
-        "@types/node": "20.4.7",
-        "@types/react": "18.2.18",
-        "@types/react-dom": "18.2.7",
-        "eslint": "8.46.0",
-        "eslint-config-next": "13.4.12",
-        "next": "13.4.12",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "typescript": "5.1.6"
-    },
-    "devDependencies": {
-        "concurrently": "^8.2.0"
-    }
+  "name": "next-shuttle-example-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm run build && concurrently --names \"next, shuttle\" --kill-others \"next dev\" \"cargo shuttle run --working-directory ./backend/\"",
+    "build": "next build && cargo build --manifest-path ./backend/Cargo.toml",
+    "start": "cargo shuttle project start --working-directory ./backend/",
+    "lint": "next lint",
+    "shuttle-login": "cargo shuttle login --working-directory ./backend/",
+    "deploy": "pnpm run build && cargo shuttle deploy --working-directory ./backend/ --allow-dirty",
+    "stop": "cargo shuttle project stop --working-directory ./backend/"
+  },
+  "dependencies": {
+    "@types/node": "20.4.7",
+    "@types/react": "18.2.18",
+    "@types/react-dom": "18.2.7",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
+    "next": "13.4.12",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "packageManager": "pnpm@8.6.11",
+  "engines": {
+    "npm": "use pnpm please!",
+    "yarn": "use pnpm please!",
+    "pnpm": ">=8.6.11"
+  }
 }
