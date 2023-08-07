@@ -1599,15 +1599,15 @@ dependencies = [
 
 [[package]]
 name = "shuttle-static-folder"
-version = "0.22.0"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "85030a1fa4137d4d9f8f463f1d26d86fd1303455036a594de076b58a636cae33"
+checksum = "45821ec3dd9146afe89ee0b80287eddc00c5f3d813707cfdf79229738aaa904d"
 dependencies = [
  "async-trait",
  "dunce",
  "fs_extra",
  "serde",
- "shuttle-service 0.22.0",
+ "shuttle-service 0.23.0",
  "tracing",
 ]
 
