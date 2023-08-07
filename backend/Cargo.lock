@@ -1372,24 +1372,12 @@ dependencies = [
 
 [[package]]
 name = "shuttle-axum"
-version = "0.22.0"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4bc0d46a247db7ced0fcf51e13589b41c06f5c43e367bda2cbb9b88040ba65d5"
+checksum = "a23b959b29c95809b4d7394081aaacbebad0926210f8306c499189a1e982107d"
 dependencies = [
  "axum",
- "shuttle-runtime 0.22.0",
-]
-
-[[package]]
-name = "shuttle-codegen"
-version = "0.22.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5dc8c26160bedab3fdddc684e52cbe41e692402d4e8254a142930b29a9a4ea97"
-dependencies = [
- "proc-macro-error",
- "proc-macro2",
- "quote",
- "syn 2.0.28",
+ "shuttle-runtime",
 ]
 
 [[package]]
@@ -1402,44 +1390,6 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.28",
-]
-
-[[package]]
-name = "shuttle-common"
-version = "0.22.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "26a36d3fc4ec9abe5d5b9f8d2698e248caf095fa6ad5bb3d6bcf9227515d4e78"
-dependencies = [
- "anyhow",
- "async-trait",
- "axum",
- "bytes",
- "chrono",
- "headers",
- "http",
- "http-body",
- "http-serde",
- "hyper",
- "jsonwebtoken",
- "once_cell",
- "opentelemetry",
- "opentelemetry-http",
- "opentelemetry-otlp",
- "pin-project",
- "prost-types",
- "rmp-serde",
- "rustrict",
- "serde",
- "serde_json",
- "strum",
- "thiserror",
- "tower",
- "tower-http",
- "tracing",
- "tracing-opentelemetry",
- "tracing-subscriber",
- "ttl_cache",
- "uuid",
 ]
 
 [[package]]
@@ -1482,24 +1432,6 @@ dependencies = [
 
 [[package]]
 name = "shuttle-proto"
-version = "0.22.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a9fae1e2817e1dc96f65c3ef6ca5daa75f8ead036900a02583d74b02da635a27"
-dependencies = [
- "anyhow",
- "chrono",
- "home",
- "prost",
- "prost-types",
- "shuttle-common 0.22.0",
- "tokio",
- "tonic",
- "tower",
- "tracing",
-]
-
-[[package]]
-name = "shuttle-proto"
 version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a4b8ab4e4e8b8a7f299ea6949c60518479ae6a8eeb140545c6b4a0640b6e3668"
@@ -1510,37 +1442,11 @@ dependencies = [
  "prost",
  "prost-types",
  "serde_json",
- "shuttle-common 0.23.0",
+ "shuttle-common",
  "tokio",
  "tonic",
  "tower",
  "tracing",
-]
-
-[[package]]
-name = "shuttle-runtime"
-version = "0.22.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "401441fd2d6f3d3285ecba1a67ff8adf5e748762f3e4ee5b7893be4063c51863"
-dependencies = [
- "anyhow",
- "async-trait",
- "chrono",
- "prost-types",
- "serde",
- "serde_json",
- "shuttle-codegen 0.22.0",
- "shuttle-common 0.22.0",
- "shuttle-proto 0.22.0",
- "shuttle-service 0.22.0",
- "strfmt",
- "thiserror",
- "tokio",
- "tokio-stream",
- "tonic",
- "tower",
- "tracing",
- "tracing-subscriber",
 ]
 
 [[package]]
@@ -1555,10 +1461,10 @@ dependencies = [
  "prost-types",
  "serde",
  "serde_json",
- "shuttle-codegen 0.23.0",
- "shuttle-common 0.23.0",
- "shuttle-proto 0.23.0",
- "shuttle-service 0.23.0",
+ "shuttle-codegen",
+ "shuttle-common",
+ "shuttle-proto",
+ "shuttle-service",
  "strfmt",
  "thiserror",
  "tokio",
@@ -1571,20 +1477,6 @@ dependencies = [
 
 [[package]]
 name = "shuttle-service"
-version = "0.22.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "beca267cd66915c6b24467f4a6cf65cba082dd1170708a3f14cd75c7a8474469"
-dependencies = [
- "anyhow",
- "async-trait",
- "serde",
- "shuttle-common 0.22.0",
- "strfmt",
- "thiserror",
-]
-
-[[package]]
-name = "shuttle-service"
 version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a0365223a805fa37f43edf34dd6ed759d8381805cfcfd10a154405fd00711c48"
@@ -1592,7 +1484,7 @@ dependencies = [
  "anyhow",
  "async-trait",
  "serde",
- "shuttle-common 0.23.0",
+ "shuttle-common",
  "strfmt",
  "thiserror",
 ]
@@ -1607,7 +1499,7 @@ dependencies = [
  "dunce",
  "fs_extra",
  "serde",
- "shuttle-service 0.23.0",
+ "shuttle-service",
  "tracing",
 ]
 
@@ -1670,7 +1562,7 @@ dependencies = [
  "axum",
  "axum-extra",
  "shuttle-axum",
- "shuttle-runtime 0.23.0",
+ "shuttle-runtime",
  "shuttle-static-folder",
  "tokio",
  "tower-http",
