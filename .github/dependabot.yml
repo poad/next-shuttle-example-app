@@ -31,3 +31,10 @@ updates:
     rebase-strategy: auto
     assignees:
       - poad
+    groups:
+      axum:
+        patterns:
+          - 'axum-*'
+      shuttle:
+        patterns:
+          - 'shuttle-*'
