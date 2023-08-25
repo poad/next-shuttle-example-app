@@ -12,7 +12,7 @@
     "stop": "cargo shuttle project stop --working-directory ./backend/"
   },
   "dependencies": {
-    "@types/node": "20.5.4",
+    "@types/node": "20.5.6",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "eslint": "8.47.0",
@@ -20,7 +20,7 @@
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   },
   "devDependencies": {
     "concurrently": "^8.2.1"
