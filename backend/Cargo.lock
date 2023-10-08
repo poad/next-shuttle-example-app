@@ -1642,9 +1642,9 @@ dependencies = [
 
 [[package]]
 name = "shuttle-common"
-version = "0.28.0"
+version = "0.28.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2bc20a4545269e84b4a1fcea3d1ed9791cef0361c37f915770d94e392b0641f2"
+checksum = "4062f00c2aec0987ab4e58a2ef9b23b241a6760e9d04f8c02d360652ad174720"
 dependencies = [
  "anyhow",
  "async-trait",
