@@ -12,8 +12,8 @@
     "stop": "cargo shuttle project stop --working-directory ./backend/"
   },
   "dependencies": {
-    "@types/node": "20.8.8",
-    "@types/react": "18.2.31",
+    "@types/node": "20.8.9",
+    "@types/react": "18.2.33",
     "@types/react-dom": "18.2.14",
     "eslint": "8.52.0",
     "eslint-config-next": "13.5.6",
